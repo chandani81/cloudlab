@@ -4,80 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login | CI/CD Project</title>
 
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
-        .login-box {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            width: 300px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 40px;
+            width: 320px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
+            color: white;
         }
 
-        .login-box h2 {
+        .container h2 {
             margin-bottom: 20px;
-            color: #333;
+            font-size: 28px;
         }
 
         input {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 8px;
+            outline: none;
+        }
+
+        input:focus {
+            transform: scale(1.02);
         }
 
         button {
             width: 100%;
-            padding: 10px;
-            background: #4facfe;
+            padding: 12px;
+            margin-top: 10px;
             border: none;
-            color: white;
             border-radius: 8px;
+            background: #00c6ff;
+            color: white;
             font-size: 16px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
-            background: #007acc;
+            background: #0072ff;
+            transform: scale(1.05);
         }
 
-        .footer {
-            margin-top: 10px;
+        .text {
             font-size: 12px;
-            color: gray;
+            margin-top: 10px;
+            opacity: 0.8;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="login-box">
-        <h2>Login</h2>
+    <div class="container">
+        <h2>🔐 Welcome Back</h2>
 
         <input type="text" placeholder="Username">
         <input type="password" placeholder="Password">
 
         <button onclick="login()">Login</button>
 
-        <div class="footer">CI/CD Project Demo</div>
+        <div class="text">CI/CD Deployment Project</div>
     </div>
 
     <script>
         function login() {
-            alert("Login successful (demo only)");
+            alert("Login Successful 🚀 (Demo Only)");
         }
     </script>
 
