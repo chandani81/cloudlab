@@ -1,0 +1,8 @@
+[
+  {
+    "workflow": "Dry run",
+    "command": "act -n",
+    "success": true,
+    "timestamp": "2026-05-25T01:49:36.183Z"
+  }
+]
