@@ -2,111 +2,348 @@
 <html lang="en">
 
 <head>
+    <title>Portfolio</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CI/CD Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            background: #f4f6f9;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #fff8fb;
             color: #333;
         }
 
-        header {
-            background: #2d6cdf;
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff4d88;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 8%;
+            min-height: 90vh;
+            background: linear-gradient(to right, #fff0f6, #ffe5ec);
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero-text h1 {
+            font-size: 65px;
+            color: #c9184a;
+            line-height: 1.2;
+        }
+
+        .hero-text span {
+            color: #ff4d88;
+        }
+
+        .hero-text p {
+            margin: 25px 0;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            margin-right: 15px;
+            display: inline-block;
+        }
+
+        .btn1 {
+            background: #ff4d88;
             color: white;
+        }
+
+        .btn2 {
+            border: 2px solid #ff4d88;
+            color: #ff4d88;
+        }
+
+        /* Right Vertical White Card */
+        .hero-card {
+            background: white;
+            width: 380px;
+            min-height: 500px;
+            padding: 50px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-card h3 {
+            color: #d63384;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .hero-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 8%;
+            background: white;
+        }
+
+        .stat-box {
+            background: #fff0f5;
+            padding: 25px;
+            width: 220px;
             text-align: center;
-            padding: 30px 20px;
+            border-radius: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 28px;
+        .stat-box h2 {
+            color: #d63384;
+            font-size: 32px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
+        .stat-box p {
+            color: #666;
+        }
+
+        /* Services */
+        .section {
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 40px;
+            color: #c9184a;
+            margin-bottom: 50px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
         }
 
         .card {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
         }
 
-        h2 {
-            color: #2d6cdf;
+        .card:hover {
+            transform: translateY(-8px);
         }
 
-        ul {
-            line-height: 1.8;
+        .card h3 {
+            color: #d63384;
+            margin-bottom: 15px;
         }
 
-        footer {
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(to right, #ff4d88, #ff80ab);
+            color: white;
             text-align: center;
-            padding: 15px;
-            background: #eee;
-            margin-top: 30px;
-            font-size: 14px;
+            padding: 80px 8%;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 14px 30px;
+            background: white;
+            color: #ff4d88;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #c9184a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-card {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .stats {
+                flex-wrap: wrap;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>🚀 CI/CD Deployment Project</h1>
-        <p>GitHub Actions Automated Deployment Demo</p>
-    </header>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="container">
-
-        <div class="card">
-            <h2>📌 Project Overview</h2>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hello, I'm <span>Chandani</span></h1>
             <p>
-                This project demonstrates a Continuous Integration and Continuous Deployment (CI/CD) pipeline using
-                GitHub Actions.
-                Every change pushed to the repository is automatically deployed to the server.
+                Software Engineering Student & Web Developer passionate
+                about creating responsive and modern websites
+                with user-friendly experiences.
             </p>
+
+            <div class="buttons">
+                <a href="#" class="btn1">Explore More</a>
+                <a href="#" class="btn2">My Projects</a>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>⚙️ Features</h2>
-            <ul>
-                <li>Automated Build Process</li>
-                <li>GitHub Actions CI/CD Pipeline</li>
-                <li>Automatic Deployment</li>
-                <li>Live Website Updates</li>
-            </ul>
+        <div class="hero-card">
+            <h3>About Me</h3>
+            <p>I enjoy designing creative websites with modern user interfaces.</p>
+
+            <h3>Project</h3>
+            <p>Portfolio Website using HTML, CSS and deployment tools.</p>
+
+            <h3>Contact</h3>
+            <p>chandani@example.com <br> Nepal</p>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stat-box">
+            <h2>5+</h2>
+            <p>Projects</p>
         </div>
 
-        <div class="card">
-            <h2>🔄 Workflow</h2>
-            <p>
-                Developer commits code → GitHub triggers Actions → Server deploys update → Live site refreshes
-                automatically.
-            </p>
+        <div class="stat-box">
+            <h2>3+</h2>
+            <p>Skills</p>
         </div>
 
-        <div class="card">
-            <h2>📊 Status</h2>
-            <ul>
-                <li>Build: Successful</li>
-                <li>Deployment: Active</li>
-                <li>Pipeline: Running</li>
-            </ul>
+        <div class="stat-box">
+            <h2>100%</h2>
+            <p>Creative Work</p>
         </div>
+    </section>
 
-    </div>
+    <!-- Services -->
+    <section class="section">
+        <h2>What I Do</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Web Design</h3>
+                <p>Creating clean and professional website designs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Development</h3>
+                <p>Building responsive websites using web technologies.</p>
+            </div>
+
+            <div class="card">
+                <h3>Creative UI</h3>
+                <p>Designing modern and user-friendly interfaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Let’s Build Something Beautiful Together</h2>
+        <p>Feel free to connect with me for projects and ideas.</p>
+        <a href="#">Contact Me</a>
+    </section>
 
     <footer>
-        © 2026 CI/CD Project | Built using GitHub Actions
+        <p>© 2026 Chandani Lamichhane | All Rights Reserved</p>
     </footer>
 
 </body>
